@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-hero summary-hero">
+  <div>
+    <span class="eyebrow">Project Summary</span>
+    <h2>Understand the model, data, and clinical impact at a glance.</h2>
+    <p>This page highlights the key strengths of the project and the prediction workflow for medical screening support.</p>
+  </div>
+</section>
+
+<section class="section-grid summary-grid">
+  <article class="info-card animated-card">
+    <span class="eyebrow">Model</span>
+    <h3>Pipeline Architecture</h3>
+    <p>The app loads a trained prediction system that includes preprocessing, scaling, and classification for reliable inference.</p>
+  </article>
+  <article class="info-card animated-card delay-1">
+    <span class="eyebrow">Data</span>
+    <h3>Wisconsin Breast Cancer Dataset</h3>
+    <p>30 carefully selected tumour metrics are used to distinguish between benign and malignant outcomes.</p>
+  </article>
+  <article class="info-card animated-card delay-2">
+    <span class="eyebrow">Experience</span>
+    <h3>Responsive Interface</h3>
+    <p>A clean, mobile-friendly layout supports clinicians with fast prediction entry and real-time result feedback.</p>
+  </article>
+</section>
+
+<section class="content-card">
+  <h3>Key Features</h3>
+  <div class="feature-grid">
+    <div>
+      <h4>Secure API</h4>
+      <p>The frontend connects to a Flask backend for each prediction request, ensuring consistent data handling.</p>
+    </div>
+    <div>
+      <h4>Clear Output</h4>
+      <p>The dashboard highlights the current diagnosis and also stores recent predictions in-session.</p>
+    </div>
+    <div>
+      <h4>Professional Design</h4>
+      <p>Modern animations, gradient surfaces, and structured pages create a polished user experience.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

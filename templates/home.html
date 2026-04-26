@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero hero-landing">
+  <div class="hero-copy animate-fly-in">
+    <span class="eyebrow">Landing Page</span>
+    <h2>Professional breast cancer prediction with a modern clinical dashboard.</h2>
+    <p>Generate accurate diagnoses by submitting patient feature values, reviewing rich analytics, and exploring a responsive prediction workflow built for clinicians.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('predict') }}">Start Predict</a>
+      <a class="btn secondary" href="{{ url_for('how_it_works') }}">How it Works</a>
+    </div>
+  </div>
+
+  <div class="hero-panel animate-fade-up">
+    <div class="hero-panel-card">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Medical analytics" />
+      <div class="hero-panel-copy">
+        <h3>Visual intelligence for clinical decisions.</h3>
+        <p>Use a guided workflow to collect measurement data and instantly evaluate whether the model classifies the case as benign or malignant.</p>
+      </div>
+    </div>
+
+    <div class="metric-grid">
+      <article class="metric-card pulse">
+        <span class="metric-label">Features</span>
+        <strong>30</strong>
+        <p>Comprehensive tumour metrics across mean, error, and worst values.</p>
+      </article>
+      
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="section-grid info-panel">
+  <article>
+    <h3>Trusted clinical workflow</h3>
+    <p>Create predictions with a modern interface that separates landing, prediction, summary, and explanation pages.</p>
+  </article>
+  
+</section>
+{% endblock %}

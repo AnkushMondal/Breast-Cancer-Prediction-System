@@ -1,0 +1,60 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run pipeline",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"run_pipeline.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run pipeline",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"run_pipeline.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect target",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import pandas as pd; df=pd.read_csv('data.csv'); print(df.columns.tolist()); print(df['diagnosis'].dtype); print(df['diagnosis'].head().tolist()); print(df['diagnosis'].astype(str).str.strip().unique()[:10])"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect target",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"inspect_target.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-target-file",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"inspect_target.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-pipeline-once",
+			"type": "shell",
+			"command": ".\\.venv\\Scripts\\python.exe",
+			"args": [
+				"run_pipeline.py"
+			],
+			"isBackground": false
+		}
+	]
+}

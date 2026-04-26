@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreastCare AI | Clinical Prediction Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">BC</div>
+      <div>
+        <h1>BreastCare AI</h1>
+        <p>Fast clinical prediction with smart dashboard insights.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#predict">Predict</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#summary">Summary</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Interactive Clinical Dashboard</span>
+        <h2>Enter your reported tumour features and get a quick diagnosis.</h2>
+        <p>Submit values from your clinical dataset to see the model prediction, result summary, and a responsive dashboard built for desktop and mobile.</p>
+        <a class="btn primary" href="#predict">Start Prediction</a>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Medical analytics" />
+        <div class="hero-stats">
+          <div>
+            <strong>30</strong>
+            <span>clinical features</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>diagnosis results</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>responsive design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-shell" id="predict">
+      <div class="panel input-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Clinical Input Form</h2>
+            <p>Use the fields below exactly as reported in clinical tests.</p>
+          </div>
+          <span class="badge">Model uses 30 features</span>
+        </div>
+
+        <form id="prediction-form" class="form-grid">
+          <div id="form-fields"></div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn primary" id="predict-btn">Predict Outcome</button>
+            <p class="hint">All 30 fields are required. Use numeric values from pathology reports.</p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="panel dashboard-panel">
+        <div class="result-card">
+          <div class="result-card-header">
+            <div>
+              <span class="eyebrow">Prediction Dashboard</span>
+              <h3>Latest output</h3>
+            </div>
+            <div class="result-pill" id="result-pill">Waiting for input</div>
+          </div>
+          <p id="result-message">Complete the form and submit to view the predicted diagnosis.</p>
+          <div class="result-details">
+            <div>
+              <span>Result</span>
+              <strong id="result-status">Not predicted</strong>
+            </div>
+            <div>
+              <span>Next step</span>
+              <strong id="result-action">Review values and consult a clinician.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="history-card">
+          <div class="panel-header">
+            <div>
+              <h3>Prediction History</h3>
+              <p>Review the most recent diagnoses you generated.</p>
+            </div>
+          </div>
+          <ul id="history-list" class="history-list">
+            <li>No predictions yet. Submit values to start.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="summary" id="how-it-works">
+      <div class="summary-card">
+        <div class="eyebrow">Technical Architecture</div>
+        <h3>The Intelligent Pipeline</h3>
+        <p>This system leverages a sophisticated machine learning ensemble to provide rapid diagnostic support. By processing 30 distinct cellular metrics, the model identifies patterns invisible to the naked eye.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-tile">
+          <div class="badge">Step 1</div>
+          <h4>Feature Engineering</h4>
+          <p>The system categorizes inputs into <strong>Mean</strong>, <strong>Standard Error</strong>, and <strong>Worst</strong> groups to analyze variance.</p>
+        </article>
+
+        <article class="feature-tile">
+          <div class="badge">Step 2</div>
+          <h4>Neural Inference</h4>
+          <p>Data is processed by a pre-trained <strong>Support Vector Machine (SVM)</strong> optimized for medical classification.</p>
+        </article>
+
+        <article class="feature-tile">
+          <div class="badge">Step 3</div>
+          <h4>Actionable Insights</h4>
+          <p>Results are delivered as binary <strong>Benign/Malignant</strong> diagnoses with clinical recommendations.</p>
+        </article>
+      </div>
+
+      <div class="summary-card" id="summary" style="margin-top: 28px;">
+        <div class="eyebrow">Dashboard Summary</div>
+        <div class="feature-grid" style="margin-top: 24px; background: none; border: none; padding: 0;">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div class="brand-mark" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0;">01</div>
+                <div>
+                    <h4 style="margin: 0 0 8px;">Real-time API</h4>
+                    <p style="font-size: 0.92rem; color: var(--muted);">Powered by a <strong>Flask REST API</strong> for instantaneous clinical-to-ML communication.</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div class="brand-mark" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background: linear-gradient(135deg, var(--success), var(--accent));">02</div>
+                <div>
+                    <h4 style="margin: 0 0 8px;">Responsive Stack</h4>
+                    <p style="font-size: 0.92rem; color: var(--muted);">Built with <strong>CSS Grid</strong> to ensure accessibility on hospital tablets and mobile devices.</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div class="brand-mark" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background: var(--surface-soft);">03</div>
+                <div>
+                    <h4 style="margin: 0 0 8px;">History Tracking</h4>
+                    <p style="font-size: 0.92rem; color: var(--muted);">Local session tracking allows clinicians to review recent diagnoses during a single session.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

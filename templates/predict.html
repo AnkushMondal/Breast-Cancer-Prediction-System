@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-hero predict-hero">
+  <div>
+    <span class="eyebrow">Prediction Workspace</span>
+    <h2>Fill the tumour values and review the diagnosis dashboard.</h2>
+    <p>Every input field is mapped to the trained model’s expected features. The prediction engine processes these values and returns a clear outcome.</p>
+  </div>
+  <div class="hero-action-card">
+    <div>
+      <strong>Ready to predict?</strong>
+      <p>Provide the 30 clinical measurements exactly as recorded and submit for analysis.</p>
+    </div>
+    <a class="btn primary" href="{{ url_for('home') }}">Back to Home</a>
+  </div>
+</section>
+
+<section class="app-shell">
+  <div class="panel input-panel">
+    <div class="panel-header">
+      <div>
+        <h2>Clinical Input Form</h2>
+        <p>Enter values from pathology reports into the fields below.</p>
+      </div>
+      <span class="badge">30 features required</span>
+    </div>
+
+    <form id="prediction-form" class="form-grid">
+      <div id="form-fields"></div>
+      <div class="form-actions">
+        <button type="submit" class="btn primary" id="predict-btn">Predict Outcome</button>
+        <p class="hint">Use numeric values for all fields. Any invalid input will be rejected.</p>
+      </div>
+    </form>
+  </div>
+
+  <aside class="panel dashboard-panel">
+    <div class="result-card animated-card" id="prediction-card">
+      <div class="result-card-header">
+        <div>
+          <span class="eyebrow">Prediction Dashboard</span>
+          <h3>Latest Result</h3>
+        </div>
+        <div class="result-pill" id="result-pill">Waiting</div>
+      </div>
+      <p id="result-message">Complete the form and submit to see the model diagnosis.</p>
+
+      <div class="result-details">
+        <div>
+          <span>Result</span>
+          <strong id="result-status">No prediction yet</strong>
+        </div>
+        <div>
+          <span>Next Step</span>
+          <strong id="result-action">Submit values to start analysis.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-card animated-card">
+      <div class="panel-header">
+        <div>
+          <h3>Prediction History</h3>
+          <p>Recent predictions from this session.</p>
+        </div>
+      </div>
+      <ul id="history-list" class="history-list">
+        <li>No predictions yet. Use the form to begin.</li>
+      </ul>
+    </div>
+  </aside>
+</section>
+{% endblock %}
